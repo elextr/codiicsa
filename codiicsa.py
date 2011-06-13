@@ -57,8 +57,8 @@ class Out( object ) :
 	
 	def __getitem__( self, i ) : return self.lst[ i ]
 			
-class docbook_common ( object ) :
-	def __init__( self, tree, all_ids ) :
+class Processing ( object ) :
+	def __init__( self, tree, all_ids = False ) :
 		self.all_ids = all_ids
 		self._section_level = -1
 		self._list_level = 0
@@ -111,21 +111,21 @@ class docbook_common ( object ) :
 		""" Strip the characters in string ch from both sides of the string 
 		    resulting from the iterable of strings lst.
 		    Returns an Out containing a single string """
-		if not lst : return Out()
+		if not isinstance( lst, Out ) : lst = Out( lst )
 		return Out( ''.join( lst ).lstrip( ch ).rstrip( ch ) )
 	
 	def Stripl( self, lst, ch = None ) :
 		""" Strip the characters in string ch from the left side of the string
 		    resulting from the iterable of strings lst.
 		    Returns an Out containing a single string """
-		if not lst : return Out()
+		if not isinstance( lst, Out ) : lst = Out( lst )
 		return Out( ''.join( lst ).lstrip( ch ) )
 		
 	def Stripr( self, lst, ch = None ) :
 		""" Strip the characters in string ch from the right side of the string
 		    resulting from the iterable of strings lst.
 		    Returns an Out containing a single string """
-		if not lst : return Out()
+		if not isinstance( lst, Out ) : lst = Out( lst )
 		return Out( ''.join( lst ).rstrip( ch ) )
 		
 	def Underline_title( self, elem ) :
@@ -140,6 +140,9 @@ class docbook_common ( object ) :
 		if out : out = '\n\n.' + out
 		else : out = Out( '\n\n' )
 		return out
+
+class docbook_common( Processing ) :
+	def __init__( self, *args ) : Processing.__init__( self, *args )
 	
 	def section( self, elem ) :
 		self._section_level += 1
@@ -221,7 +224,7 @@ class docbook_common ( object ) :
 		return self.Pre( elem ) + self.Children( elem )
 
 class docbook_article ( docbook_common ) :
-	def __init__( self, tree, all_ids = False ) : docbook_common.__init__( self, tree, all_ids )
+	def __init__( self, *args ) : docbook_common.__init__( self, *args )
 		
 	def article( self, elem ) :
 		self._section_level = 0
@@ -232,25 +235,23 @@ class docbook_article ( docbook_common ) :
 
 _defaults = { 'article' : docbook_article }
 
-def convert( infile, outfile, dbob = None, cwsl = True ) :
+def convert( infile, outfile, dbclass = None, cargs = [], kcargs = {}, cwsl = True ) :
 	""" convert the infile in docbook to the outfile in asciidoc
 	    using the specified docbook convert object or a default one for the type of document """
 	t = ElementTree( file = infile )
 	root = t.getroot()
-	if dbob is None :
+	if dbclass is None :
 		dt = root.tag
 		dts = _defaults.get( dt, None )
-		if dts : db = dts( t )
+		if dts : db = dts( t, *cargs, **kcargs )
 		else :
 			print "Error: Unknown document type", dt
 			return
-	else : db = dbob( t )
+	else : db = dbclass( t, *cargs, **kcargs )
 	out = db.Process( root )
 	nn = 0
 	with open( outfile, "w" ) as f :
-#		print out.lst
 		for i in out :
-#			print i
 			if cwsl :
 				l = i.lstrip( '\n' ); ln = len( i ) - len( l )
 				r = l.rstrip( '\n' ); rn = len( l ) - len( r )

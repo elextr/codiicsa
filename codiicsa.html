@@ -1,0 +1,1143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<meta name="generator" content="AsciiDoc 8.6.4" />
+<title>Codiicsa - Asciidoc Reversed</title>
+<style type="text/css">
+/* Sans-serif font. */
+h1, h2, h3, h4, h5, h6,
+div.title, caption.title,
+thead, p.table.header,
+div#toctitle,
+span#author, span#revnumber, span#revdate, span#revremark,
+div#footer {
+  font-family: Arial,Helvetica,sans-serif;
+}
+
+/* Serif font. */
+div.sectionbody {
+  font-family: Georgia,"Times New Roman",Times,serif;
+}
+
+/* Monospace font. */
+tt {
+  font-size: inherit;
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+  color: navy;
+}
+
+strong {
+  font-weight: bold;
+  color: #083194;
+}
+
+tt {
+  font-size: inherit;
+  color: navy;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  padding-top: 0.5em;
+}
+h3 {
+  float: left;
+}
+h3 + * {
+  clear: left;
+}
+
+div.sectionbody {
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+ul, ol, li > p {
+  margin-top: 0;
+}
+ul > li     { color: #aaa; }
+ul > li > * { color: black; }
+
+pre {
+  padding: 0;
+  margin: 0;
+}
+
+span#author {
+  color: #527bbd;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+span#email {
+}
+span#revnumber, span#revdate, span#revremark {
+}
+
+div#footer {
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+div#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+div#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+div#preamble {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.tableblock, div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.0em;
+  margin-bottom: 2.0em;
+  margin-right: 10%;
+  color: #606060;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  color: #527bbd;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid #dddddd;
+  border-left: 4px solid #f0f0f0;
+  padding: 0.5em;
+}
+
+div.listingblock > div.content {
+  border: 1px solid #dddddd;
+  border-left: 5px solid #f0f0f0;
+  background: #f8f8f8;
+  padding: 0.5em;
+}
+
+div.quoteblock, div.verseblock {
+  padding-left: 1.0em;
+  margin-left: 1.0em;
+  margin-right: 10%;
+  border-left: 5px solid #f0f0f0;
+  color: #777777;
+}
+
+div.quoteblock > div.attribution {
+  padding-top: 0.5em;
+  text-align: right;
+}
+
+div.verseblock > pre.content {
+  font-family: inherit;
+  font-size: inherit;
+}
+div.verseblock > div.attribution {
+  padding-top: 0.75em;
+  text-align: left;
+}
+/* DEPRECATED: Pre version 8.2.7 verse style literal block. */
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 3px solid #dddddd;
+}
+
+div.exampleblock > div.content {
+  border-left: 3px solid #dddddd;
+  padding-left: 0.5em;
+}
+
+div.imageblock div.content { padding-left: 0; }
+span.image img { border-style: none; }
+a.image:visited { color: white; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: normal;
+  color: navy;
+}
+dd > *:first-child {
+  margin-top: 0.1em;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+ol.arabic {
+  list-style-type: decimal;
+}
+ol.loweralpha {
+  list-style-type: lower-alpha;
+}
+ol.upperalpha {
+  list-style-type: upper-alpha;
+}
+ol.lowerroman {
+  list-style-type: lower-roman;
+}
+ol.upperroman {
+  list-style-type: upper-roman;
+}
+
+div.compact ul, div.compact ol,
+div.compact p, div.compact p,
+div.compact div, div.compact div {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead, p.table.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+tfoot {
+  font-weight: bold;
+}
+td > div.verse {
+  white-space: pre;
+}
+p.table {
+  margin-top: 0;
+}
+/* Because the table frame attribute is overriden by CSS in most browsers. */
+div.tableblock > table[frame="void"] {
+  border-style: none;
+}
+div.tableblock > table[frame="hsides"] {
+  border-left-style: none;
+  border-right-style: none;
+}
+div.tableblock > table[frame="vsides"] {
+  border-top-style: none;
+  border-bottom-style: none;
+}
+
+
+div.hdlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hdlist tr {
+  padding-bottom: 15px;
+}
+dt.hdlist1.strong, td.hdlist1.strong {
+  font-weight: bold;
+}
+td.hdlist1 {
+  vertical-align: top;
+  font-style: normal;
+  padding-right: 0.8em;
+  color: navy;
+}
+td.hdlist2 {
+  vertical-align: top;
+}
+div.hdlist.compact tr {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.comment {
+  background: yellow;
+}
+
+.footnote, .footnoteref {
+  font-size: 0.8em;
+}
+
+span.footnote, span.footnoteref {
+  vertical-align: super;
+}
+
+#footnotes {
+  margin: 20px 0 20px 0;
+  padding: 7px 0 0 0;
+}
+
+#footnotes div.footnote {
+  margin: 0 0 5px 0;
+}
+
+#footnotes hr {
+  border: none;
+  border-top: 1px solid silver;
+  height: 1px;
+  text-align: left;
+  margin-left: 0;
+  width: 20%;
+  min-width: 100px;
+}
+
+div.colist td {
+  padding-right: 0.5em;
+  padding-bottom: 0.3em;
+  vertical-align: top;
+}
+div.colist td img {
+  margin-top: 0.3em;
+}
+
+@media print {
+  div#footer-badges { display: none; }
+}
+
+div#toc {
+  margin-bottom: 2.5em;
+}
+
+div#toctitle {
+  color: #527bbd;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+
+span.aqua { color: aqua; }
+span.black { color: black; }
+span.blue { color: blue; }
+span.fuchsia { color: fuchsia; }
+span.gray { color: gray; }
+span.green { color: green; }
+span.lime { color: lime; }
+span.maroon { color: maroon; }
+span.navy { color: navy; }
+span.olive { color: olive; }
+span.purple { color: purple; }
+span.red { color: red; }
+span.silver { color: silver; }
+span.teal { color: teal; }
+span.white { color: white; }
+span.yellow { color: yellow; }
+
+span.aqua-background { background: aqua; }
+span.black-background { background: black; }
+span.blue-background { background: blue; }
+span.fuchsia-background { background: fuchsia; }
+span.gray-background { background: gray; }
+span.green-background { background: green; }
+span.lime-background { background: lime; }
+span.maroon-background { background: maroon; }
+span.navy-background { background: navy; }
+span.olive-background { background: olive; }
+span.purple-background { background: purple; }
+span.red-background { background: red; }
+span.silver-background { background: silver; }
+span.teal-background { background: teal; }
+span.white-background { background: white; }
+span.yellow-background { background: yellow; }
+
+span.big { font-size: 2em; }
+span.small { font-size: 0.6em; }
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/
+window.onload = function(){asciidoc.footnotes(); asciidoc.toc(2);}
+var asciidoc = {  // Namespace.
+
+/////////////////////////////////////////////////////////////////////
+// Table Of Contents generator
+/////////////////////////////////////////////////////////////////////
+
+/* Author: Mihai Bazon, September 2002
+ * http://students.infoiasi.ro/~mishoo
+ *
+ * Table Of Content generator
+ * Version: 0.4
+ *
+ * Feel free to use this script under the terms of the GNU General Public
+ * License, as long as you do not remove or alter this notice.
+ */
+
+ /* modified by Troy D. Hanson, September 2006. License: GPL */
+ /* modified by Stuart Rackham, 2006, 2009. License: GPL */
+
+// toclevels = 1..4.
+toc: function (toclevels) {
+
+  function getText(el) {
+    var text = "";
+    for (var i = el.firstChild; i != null; i = i.nextSibling) {
+      if (i.nodeType == 3 /* Node.TEXT_NODE */) // IE doesn't speak constants.
+        text += i.data;
+      else if (i.firstChild != null)
+        text += getText(i);
+    }
+    return text;
+  }
+
+  function TocEntry(el, text, toclevel) {
+    this.element = el;
+    this.text = text;
+    this.toclevel = toclevel;
+  }
+
+  function tocEntries(el, toclevels) {
+    var result = new Array;
+    var re = new RegExp('[hH]([2-'+(toclevels+1)+'])');
+    // Function that scans the DOM tree for header elements (the DOM2
+    // nodeIterator API would be a better technique but not supported by all
+    // browsers).
+    var iterate = function (el) {
+      for (var i = el.firstChild; i != null; i = i.nextSibling) {
+        if (i.nodeType == 1 /* Node.ELEMENT_NODE */) {
+          var mo = re.exec(i.tagName);
+          if (mo && (i.getAttribute("class") || i.getAttribute("className")) != "float") {
+            result[result.length] = new TocEntry(i, getText(i), mo[1]-1);
+          }
+          iterate(i);
+        }
+      }
+    }
+    iterate(el);
+    return result;
+  }
+
+  var toc = document.getElementById("toc");
+  var entries = tocEntries(document.getElementById("content"), toclevels);
+  for (var i = 0; i < entries.length; ++i) {
+    var entry = entries[i];
+    if (entry.element.id == "")
+      entry.element.id = "_toc_" + i;
+    var a = document.createElement("a");
+    a.href = "#" + entry.element.id;
+    a.appendChild(document.createTextNode(entry.text));
+    var div = document.createElement("div");
+    div.appendChild(a);
+    div.className = "toclevel" + entry.toclevel;
+    toc.appendChild(div);
+  }
+  if (entries.length == 0)
+    toc.parentNode.removeChild(toc);
+},
+
+
+/////////////////////////////////////////////////////////////////////
+// Footnotes generator
+/////////////////////////////////////////////////////////////////////
+
+/* Based on footnote generation code from:
+ * http://www.brandspankingnew.net/archive/2005/07/format_footnote.html
+ */
+
+footnotes: function () {
+  var cont = document.getElementById("content");
+  var noteholder = document.getElementById("footnotes");
+  var spans = cont.getElementsByTagName("span");
+  var refs = {};
+  var n = 0;
+  for (i=0; i<spans.length; i++) {
+    if (spans[i].className == "footnote") {
+      n++;
+      // Use [\s\S] in place of . so multi-line matches work.
+      // Because JavaScript has no s (dotall) regex flag.
+      note = spans[i].innerHTML.match(/\s*\[([\s\S]*)]\s*/)[1];
+      noteholder.innerHTML +=
+        "<div class='footnote' id='_footnote_" + n + "'>" +
+        "<a href='#_footnoteref_" + n + "' title='Return to text'>" +
+        n + "</a>. " + note + "</div>";
+      spans[i].innerHTML =
+        "[<a id='_footnoteref_" + n + "' href='#_footnote_" + n +
+        "' title='View footnote' class='footnote'>" + n + "</a>]";
+      var id =spans[i].getAttribute("id");
+      if (id != null) refs["#"+id] = n;
+    }
+  }
+  if (n == 0)
+    noteholder.parentNode.removeChild(noteholder);
+  else {
+    // Process footnoterefs.
+    for (i=0; i<spans.length; i++) {
+      if (spans[i].className == "footnoteref") {
+        var href = spans[i].getElementsByTagName("a")[0].getAttribute("href");
+        href = href.match(/#.*/)[0];  // Because IE return full URL.
+        n = refs[href];
+        spans[i].innerHTML =
+          "[<a href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+      }
+    }
+  }
+}
+
+}
+/*]]>*/
+</script>
+</head>
+<body class="article" style="max-width:40em">
+<div id="header">
+<h1>Codiicsa - Asciidoc Reversed</h1>
+<span id="author">Lex Trotman</span><br />
+<span id="revdate">v0.1 13 June 2011</span>
+<div id="toc">
+  <div id="toctitle">Table of Contents</div>
+  <noscript><p><b>JavaScript must be enabled in your browser to display the table of contents.</b></p></noscript>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_introduction">Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Codiicsa is an extendable Python program for converting Docbook XML to the
+Asciidoc markup language.</p></div>
+<div class="paragraph"><p>By default it is configured to reverse Docbook with the conventions used in
+Docbook generated by Asciidoc but configuration will usually be needed for
+documents using other conventions.</p></div>
+<div class="paragraph"><p>Codiicsa is in its initial stages of development but so far it converts
+nested sections, simple lists, some text markup and some blocks.</p></div>
+<div class="paragraph"><p>Codiicsa outputs the tags for XML that it doesn&#8217;t understand to indicate
+where manual editing is needed.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note" />
+</td>
+<td class="content">Codiicsa outputs the tags and contents for unrecognised elements, but
+not the attributes of those elements.</td>
+</tr></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_usage">Usage</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre><tt>python codiicsa.py infile outfile</tt></pre>
+</div></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_design_notes">Design Notes</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Codiicsa operates by parsing the input Docbook into a tree and then generates
+the output during a depth-first tree walk.  The output is kept in memory so that
+the processing for a node can edit the output of its children if needed.</p></div>
+<div class="sect2">
+<h3 id="_peculiarities_of_elementtree">Peculiarities of ElementTree</h3>
+<div class="paragraph"><p>Codiicsa uses the ElementTree parser which has some particular impacts on
+the processing of the resulting tree.  The contents of each XML element is
+stored as:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+the initial text in the <em>text</em> attribute on the node representing the
+element, and
+</p>
+</li>
+<li>
+<p>
+a list of child nodes.
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Text between the child nodes which is actually part of the text in <em>elem</em> is
+contained in the <em>tail</em> attributes on the child nodes.</p></div>
+<div class="paragraph"><p>If <em>elem</em> represents a node which does not contain text (either by Docbook
+rules or by convention) then the <em>tail</em> attributes can be ignored since they
+are just whitespace to make the Docbook look nice (Asciidoc generates a lot
+of this).</p></div>
+<div class="paragraph"><p>But if <em>elem</em> represents a node that can contain text care must be taken to
+ensure that the when <em>elem</em> is processed the <em>tails</em> of its <strong>children</strong> are
+processed.  The <em>tail</em> of <em>elem</em> itself is outside its closing tag and is not
+part of its processing.</p></div>
+<div class="paragraph"><p>Attributes of <em>ElementTree</em> that can be useful in your processing:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+elem.<em>text</em> contains the text as described above.
+</p>
+</li>
+<li>
+<p>
+elem.<em>tail</em> contains text following the elements close tag.
+</p>
+</li>
+<li>
+<p>
+elem.<em>get( <em>name</em> )</em> gets the XML attribute value for the attribute
+<em>name</em> or <em>None</em> if the element doesn&#8217;t have that attribute.
+</p>
+</li>
+</ul></div>
+</div>
+<div class="sect2">
+<h3 id="_the_em_out_em_class">The <em>Out</em> class</h3>
+<div class="paragraph"><p>Codiicsa accumulates its output as a list of strings rather than catenating
+it into a single string since Python string handling might generate a whole
+new string each time a modification is made (or it might not, depends on
+exact circumstances).</p></div>
+<div class="paragraph"><p>The <em>Out</em> class is a convenient wrapper for a list that makes it simpler to add
+strings, and <em>Out</em> objects returned from processing child nodes.</p></div>
+<div class="paragraph"><p>The <em>Out</em> constructor takes either a string or a list of strings as the initial
+list of strings.</p></div>
+<div class="paragraph"><p><em>Out</em>, and string objects can be combined using the <em>+</em> operator making it
+convenient to express a sequence of output, for example the code to generate
+the Asciidoc link syntax:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>&lt;&lt;target,text&gt;&gt;</tt></pre>
+</div></div>
+<div class="paragraph"><p>from the XML</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>&lt;link linkend="target"&gt;text&lt;/link&gt;</tt></pre>
+</div></div>
+<div class="paragraph"><p>is</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.3
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>
+out <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">Out</span></span><span style="color: #990000">(</span> <span style="color: #FF0000">'&lt;&lt;'</span> <span style="color: #990000">)</span> <span style="color: #990000">+</span> elem<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">get</span></span><span style="color: #990000">(</span> <span style="color: #FF0000">'linkend'</span> <span style="color: #990000">)</span> <span style="color: #990000">+</span> <span style="color: #FF0000">','</span> <span style="color: #990000">+</span> elem<span style="color: #990000">.</span>text <span style="color: #990000">\</span>
+      <span style="color: #990000">+</span> self<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">Children</span></span><span style="color: #990000">(</span> elem <span style="color: #990000">)</span> <span style="color: #990000">+</span> <span style="color: #FF0000">'&gt;&gt;'</span> <span style="color: #990000">+</span> elem<span style="color: #990000">.</span>tail
+</tt></pre></div></div>
+<div class="paragraph"><p>Note that if the first item had not been made into an <em>Out</em> object it would
+still have worked but the first four items ( <em>&lt;&lt;</em>, the <em>linkedn</em> attribute
+value, the <em>,</em> and the elements text) would have been catenated into a
+single string first by the standard Python <em>+</em> operator before prepending
+that string to the <em>Out</em> object returned from processing the children.</p></div>
+<div class="paragraph"><p>Because the <em>+</em> operator works for <em>Out</em> objects, Python makes the <em>+=</em> work as
+well, so the following appends to <em>out</em>.</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>out += 'blah blah' + elem.text</tt></pre>
+</div></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuration">Configuration</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Codiicsa is designed to be extended or modified without changing the original
+code.  This means that you do not have to attempt to merge your changes if bug
+fixes or extensions are made to the original Codiicsa.</p></div>
+<div class="paragraph"><p>Codiicsa specifies all processing using a Python class with methods named to
+match the Docbook element names.  When an element is processed the
+appropriately named method is called with the node representing the element
+as its parameter.</p></div>
+<div class="paragraph"><p>This allows extension or overriding in the way that cascading style sheets
+or the Asciidoc configuration files work.  Methods in a child class are added
+to the class or override an existing method of the same name.</p></div>
+<div class="paragraph"><p>As a concrete (but silly) example lets output <em>bibliorefs not handled</em> when a
+<em>&lt;biblioref&gt;</em> element is seen and lets override the existing <em>&lt;link&gt;</em> element
+processing to output <em>links are good</em>.</p></div>
+<div class="paragraph"><p>This example will also serve to introduce a couple of other pieces of necessary
+boilerplate.</p></div>
+<div class="paragraph"><p>The user python file (say my_file.py) is:</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.3
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #000080">import</span></span> codiicsa <span style="font-style: italic"><span style="color: #9A1900"># <img src="./images/icons/callouts/1.png" alt="1" /></span></span>
+<span style="font-weight: bold"><span style="color: #000080">import</span></span> sys <span style="font-style: italic"><span style="color: #9A1900"># to get the command line args</span></span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="font-weight: bold"><span style="color: #000000">my_stuff</span></span><span style="color: #990000">(</span> codiicsa<span style="color: #990000">.</span>docbook_article <span style="color: #990000">)</span> <span style="color: #990000">:</span> <span style="font-style: italic"><span style="color: #9A1900"># <img src="./images/icons/callouts/2.png" alt="2" /></span></span>
+
+    <span style="font-weight: bold"><span style="color: #0000FF">def</span></span> <span style="font-weight: bold"><span style="color: #000000">__init__</span></span><span style="color: #990000">(</span> self<span style="color: #990000">,</span> <span style="color: #990000">*</span>args <span style="color: #990000">)</span> <span style="color: #990000">:</span>
+        codiicsa<span style="color: #990000">.</span>docbook_article<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">__init__</span></span><span style="color: #990000">(</span> <span style="color: #990000">*</span>args <span style="color: #990000">)</span> <span style="font-style: italic"><span style="color: #9A1900"># <img src="./images/icons/callouts/3.png" alt="3" /></span></span>
+
+    <span style="font-weight: bold"><span style="color: #0000FF">def</span></span> <span style="font-weight: bold"><span style="color: #000000">biblioref</span></span><span style="color: #990000">(</span> self<span style="color: #990000">,</span> elem <span style="color: #990000">)</span> <span style="color: #990000">:</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="font-weight: bold"><span style="color: #000000">Out</span></span><span style="color: #990000">(</span> <span style="color: #FF0000">'bibliorefs not handled'</span> <span style="color: #990000">)</span>
+
+    <span style="font-weight: bold"><span style="color: #0000FF">def</span></span> <span style="font-weight: bold"><span style="color: #000000">link</span></span><span style="color: #990000">(</span> self<span style="color: #990000">,</span> elem <span style="color: #990000">)</span> <span style="color: #990000">:</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="font-weight: bold"><span style="color: #000000">Out</span></span><span style="color: #990000">(</span> <span style="color: #FF0000">'links are good'</span> <span style="color: #990000">)</span>
+
+codiicsa<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">convert</span></span><span style="color: #990000">(</span> sys<span style="color: #990000">.</span>argv<span style="color: #990000">[</span><span style="color: #993399">1</span><span style="color: #990000">],</span> sys<span style="color: #990000">.</span>argv<span style="color: #990000">[</span><span style="color: #993399">2</span><span style="color: #990000">],</span> my_stuff <span style="color: #990000">)</span> <span style="font-style: italic"><span style="color: #9A1900"># <img src="./images/icons/callouts/4.png" alt="4" /></span></span></tt></pre></div></div>
+<div class="colist arabic"><table>
+<tr><td><img src="./images/icons/callouts/1.png" alt="1" /></td><td>
+Put the codiicsa.py file in the same directory so Python can find it to
+import
+</td></tr>
+<tr><td><img src="./images/icons/callouts/2.png" alt="2" /></td><td>
+Derive your extension from the appropriate document type class, here article
+</td></tr>
+<tr><td><img src="./images/icons/callouts/3.png" alt="3" /></td><td>
+Boilerplate to pass initial parameters to the base classes without caring how
+many there are, use keyword arguments if you need to add your own initial
+parameters. See below for standard parameters.
+</td></tr>
+<tr><td><img src="./images/icons/callouts/4.png" alt="4" /></td><td>
+Call the convert routine passing the input file name, the output file
+name and the name of your class.
+</td></tr>
+</table></div>
+<div class="paragraph"><p>The program is then used by:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>python my_file.py infilename outfilename</tt></pre>
+</div></div>
+<div class="sect2">
+<h3 id="parameters">Constructor Parameters</h3>
+<div class="paragraph"><p>The constructors of Codiicsa base classes codiicsa.docbook_article,
+codiicsa.docbook_book (soon) and codiicsa.docbook_manpage (soon) have the
+following parameters.</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>codiicsa.classname( tree, all_ids = False )</tt></pre>
+</div></div>
+<div class="dlist"><dl>
+<dt class="hdlist1">
+<em>tree</em>
+</dt>
+<dd>
+<p>
+is the tree generated by ElementTree. Used to generate the
+dictionary of child to parent links.
+</p>
+</dd>
+<dt class="hdlist1">
+<em>all_ids</em>
+</dt>
+<dd>
+<p>
+specifies if <em>Pre</em> (see below) ignores ids that start with underscore.
+</p>
+</dd>
+</dl></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_library_methods">Library Methods</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Codiicsa provides a set of processing methods (ie you call them with self.name)
+that provide common processing capabilities.</p></div>
+<div class="paragraph"><p>All names begin with an uppercase to minimise clashes with methods named for
+tag names.  If tag names do clash call the library method by:</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.3
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>self<span style="color: #990000">.</span>Processing<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">method</span></span><span style="color: #990000">(</span> <span style="color: #990000">...</span> <span style="color: #990000">)</span></tt></pre></div></div>
+<div class="sect2">
+<h3 id="_pre">Pre</h3>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.3
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>self<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">Pre</span></span><span style="color: #990000">(</span> elem<span style="color: #990000">,</span> inline <span style="color: #990000">=</span> False<span style="color: #990000">,</span> attrs <span style="color: #990000">=</span> <span style="color: #990000">[]</span> <span style="color: #990000">)</span></tt></pre></div></div>
+<div class="paragraph"><p>Generate prefix markup based on attributes of <em>elem</em>. Generates:</p></div>
+<div class="dlist"><dl>
+<dt class="hdlist1">
+<em>[[id]]</em>
+</dt>
+<dd>
+<p>
+Based on the <em>id</em> attribute.  Ids starting with underscore are
+ignored on the assumption that they are machine generated and will be re-generated.
+The <em>all_ids</em> initialisation parameter controls this behavior.
+</p>
+</dd>
+<dt class="hdlist1">
+<em>[attrs, role=&#8230;]</em>
+</dt>
+<dd>
+<p>
+Outputs a comma separated list of the positional
+attributes passed as <em>attrs</em> and the <em>role</em> attribute if it is present on
+the element.
+</p>
+</dd>
+</dl></div>
+<div class="paragraph"><p>The <em>inline</em> parameter controls whether the <em>[[id]]</em> is inline or on a
+line by itself.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_process">Process</h3>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.3
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>self<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">Process</span></span><span style="color: #990000">(</span> elem <span style="color: #990000">)</span></tt></pre></div></div>
+<div class="paragraph"><p>Process the specified element to an <em>Out</em> object.  Only used if out of order
+processing is required.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note" />
+</td>
+<td class="content">Use <em>self.Children()</em> to process children.</td>
+</tr></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_children">Children</h3>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.3
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>self<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">Children</span></span><span style="color: #990000">(</span> elem<span style="color: #990000">,</span> do <span style="color: #990000">=</span> None<span style="color: #990000">,</span> dont <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">set</span></span><span style="color: #990000">()</span> <span style="color: #990000">)</span></tt></pre></div></div>
+<div class="paragraph"><p>Process the children of <em>elem</em>.</p></div>
+<div class="dlist"><dl>
+<dt class="hdlist1">
+<em>do</em>
+</dt>
+<dd>
+<p>
+specifies the tags names of the children to process.  the values can be:
+</p>
+<div class="dlist"><dl>
+<dt class="hdlist1">
+<em>None</em>
+</dt>
+<dd>
+<p>
+(default) all children
+</p>
+</dd>
+<dt class="hdlist1">
+a string
+</dt>
+<dd>
+<p>
+just process children of that tagname
+</p>
+</dd>
+<dt class="hdlist1">
+a set
+</dt>
+<dd>
+<p>
+just process children with tagnames in the set
+</p>
+</dd>
+</dl></div>
+</dd>
+<dt class="hdlist1">
+<em>dont</em>
+</dt>
+<dd>
+<p>
+if <em>do</em> is <em>None</em> (ie all) <em>dont</em> is a set specifying exceptions.
+</p>
+</dd>
+<dt class="hdlist1">
+returns
+</dt>
+<dd>
+<p>
+an <em>Out</em> object
+</p>
+</dd>
+</dl></div>
+</div>
+<div class="sect2">
+<h3 id="_strip_stripl_stripr">Strip, Stripl, Stripr</h3>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.3
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>self<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">Strip</span></span><span style="color: #990000">(</span> <span style="font-weight: bold"><span style="color: #000080">from</span></span><span style="color: #990000">,</span> chars <span style="color: #990000">)</span>
+self<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">Stripl</span></span><span style="color: #990000">(</span> <span style="font-weight: bold"><span style="color: #000080">from</span></span><span style="color: #990000">,</span> chars <span style="color: #990000">)</span>
+self<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">Stripr</span></span><span style="color: #990000">(</span> <span style="font-weight: bold"><span style="color: #000080">from</span></span><span style="color: #990000">,</span> chars <span style="color: #990000">)</span></tt></pre></div></div>
+<div class="paragraph"><p>Remove unwanted characters from both ends of the output. <em>Strip</em> removes from
+both ends, <em>Stripl</em> removes from the start (left) end and <em>Stripr</em> removes from
+the end (right) end.</p></div>
+<div class="dlist"><dl>
+<dt class="hdlist1">
+<em>from</em>
+</dt>
+<dd>
+<p>
+String, list or <em>Out</em> object to be stripped.
+</p>
+</dd>
+<dt class="hdlist1">
+<em>chars</em>
+</dt>
+<dd>
+<p>
+A string specifying a set of characters to remove.
+</p>
+</dd>
+<dt class="hdlist1">
+returns
+</dt>
+<dd>
+<p>
+An <em>Out</em> object with a single string.
+</p>
+</dd>
+</dl></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note" />
+</td>
+<td class="content">Works by catenating the input to a single string then stripping it.</td>
+</tr></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_underline_title">Underline_title</h3>
+<div class="paragraph"><p>Generates an Asciidoc underlined title from the <em>&lt;title&gt;</em> child of the element.
+The underline character used is chosen from the current <em>&lt;section&gt;</em> nesting level.</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.3
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>self<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">Underline_title</span></span><span style="color: #990000">(</span> elem <span style="color: #990000">)</span></tt></pre></div></div>
+<div class="dlist"><dl>
+<dt class="hdlist1">
+returns
+</dt>
+<dd>
+<p>
+an empty <em>Out</em> if there is no <em>&lt;title&gt;</em> child or one containing the title.
+</p>
+</dd>
+</dl></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note" />
+</td>
+<td class="content">Since <em>Underline_title</em> has already processed the <em>&lt;title&gt;</em> child subsequent
+processing of the children of this element should specify <em>dont='title'</em>.</td>
+</tr></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_block_title">Block_title</h3>
+<div class="paragraph"><p>Generates an Asciidoc block title from the <em>&lt;title&gt;</em> child of the element.</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.3
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>self<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">Block_title</span></span><span style="color: #990000">(</span> elem <span style="color: #990000">)</span></tt></pre></div></div>
+<div class="dlist"><dl>
+<dt class="hdlist1">
+returns
+</dt>
+<dd>
+<p>
+an empty <em>Out</em> if there is no <em>&lt;title&gt;</em> child or one containing the title.
+</p>
+</dd>
+</dl></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note" />
+</td>
+<td class="content">Since <em>Blockline_title</em> has already processed the <em>&lt;title&gt;</em> child subsequent
+processing of the children of this element should specify <em>dont='title'</em>.</td>
+</tr></table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_library_functions">Library Functions</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>The library functions are not members of a class so they are called conventionally.
+Since they can&#8217;t clash with tag names they have lower case names.</p></div>
+<div class="sect2">
+<h3 id="_convert">convert</h3>
+<div class="paragraph"><p>Use the specified class to convert the input file to the output file.</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.3
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #000000">convert</span></span><span style="color: #990000">(</span> infile<span style="color: #990000">,</span> outfile<span style="color: #990000">,</span> <span style="color: #990000">\</span>
+         dbclass <span style="color: #990000">=</span> None<span style="color: #990000">,</span> cargs <span style="color: #990000">=</span> <span style="color: #990000">[],</span> kcargs <span style="color: #990000">=</span> <span style="color: #990000">{},</span> <span style="color: #990000">\</span>
+         cwsl <span style="color: #990000">=</span> True <span style="color: #990000">)</span></tt></pre></div></div>
+<div class="dlist"><dl>
+<dt class="hdlist1">
+<em>infile</em>
+</dt>
+<dd>
+<p>
+Filename of the input docbook file.
+</p>
+</dd>
+<dt class="hdlist1">
+<em>outfile</em>
+</dt>
+<dd>
+<p>
+Filename to write the Asciidoc to, overwrites existing files.
+</p>
+</dd>
+<dt class="hdlist1">
+<em>dbclass</em>
+</dt>
+<dd>
+<p>
+The name of the class to use for the conversion processing.  If
+<em>None</em> (the default) one of the standard classes is used based on the docbook
+root element type.
+</p>
+</dd>
+<dt class="hdlist1">
+<em>cargs</em>
+</dt>
+<dd>
+<p>
+List of parameters to be passed to the dbclass constructor (see
+<a href="#parameters">[parameters]</a>) in addition to the tree.
+</p>
+</dd>
+<dt class="hdlist1">
+<em>kcargs</em>
+</dt>
+<dd>
+<p>
+Dictionary of keyword parameters to be passed to the dbclass constructor.
+</p>
+</dd>
+<dt class="hdlist1">
+<em>cwsl</em>
+</dt>
+<dd>
+<p>
+Crush whitespace lines (see below).
+</p>
+</dd>
+</dl></div>
+<div class="paragraph"><p>For readability Docbook is often formatted with nested tags separated by
+newlines and indented so that they look like:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>&lt;articleinfo&gt;
+    &lt;title&gt;AsciiDoc User Guide&lt;/title&gt;
+    &lt;author&gt;
+        &lt;firstname&gt;Stuart&lt;/firstname&gt;
+        &lt;surname&gt;Rackham&lt;/surname&gt;
+        &lt;email&gt;srackham@gmail.com&lt;/email&gt;
+    &lt;/author&gt;
+    &lt;authorinitials&gt;SJR&lt;/authorinitials&gt;
+&lt;/articleinfo&gt;</tt></pre>
+</div></div>
+<div class="paragraph"><p>When an element can contain text, technically this whitespace is part of the
+element, but it produces a lot of whitespace lines in the Asciidoc output.</p></div>
+<div class="paragraph"><p>When <em>cwsl</em> is true (the default) contiguous whitespace lines are reduced to
+a single blank line since in Asciidoc more than one is redundant.  If you
+have literal elements with multiple blank lines this may be annoying, <em>cwsl</em>
+can be set to <em>False</em> to prevent crushing, but the effort to hand edit the
+literal is likely to be much less than editing the amount of redundant
+whitespace produced.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes"><hr /></div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2011-06-13 13:35:40 EST
+</div>
+</div>
+</body>
+</html>
