@@ -78,8 +78,8 @@ it into a single string since Python string handling might generate a whole
 new string each time a modification is made (or it might not, depends on 
 exact circumstances).
 
-The _Out_ class is a convenient wrapper for a list that makes it simpler to add
-strings, and _Out_ objects returned from processing child nodes.
+The _Out_ class is a convenience wrapper for a list that makes it simpler to add
+strings, and _Out_ objects, eg those returned from processing child nodes.
 
 The _Out_ constructor takes either a string or a list of strings as the initial 
 list of strings.
@@ -109,7 +109,7 @@ out = Out( '<<' ) + elem.get( 'linkend' ) + ',' + elem.text \
 ----
 
 Note that if the first item had not been made into an _Out_ object it would 
-still have worked but the first four items ( '<<', the 'linkedn' attribute 
+still have worked but the first four items ( '<<', the 'linkend' attribute 
 value, the ',' and the elements text) would have been catenated into a 
 single string first by the standard Python _+_ operator before prepending 
 that string to the _Out_ object returned from processing the children.
@@ -128,14 +128,22 @@ Codiicsa is designed to be extended or modified without changing the original
 code.  This means that you do not have to attempt to merge your changes if bug
 fixes or extensions are made to the original Codiicsa.
 
-Codiicsa specifies all processing using a Python class with methods named to 
-match the Docbook element names.  When an element is processed the 
-appropriately named method is called with the node representing the element 
-as its parameter.
+Please read the design notes section, this provides some useful information 
+to understand the process.
+
+Codiicsa specifies all processing using a Python class with methods 
+named to match the Docbook element names.  When an element is 
+processed the appropriately named method is called with the element 
+tree node representing the docbook element as its parameter.
+
+[NOTE]
+The preceding paragraph is the key point, method names *match* docbook 
+element names, thats how it finds them, so the case must match as well.
 
 This allows extension or overriding in the way that cascading style sheets 
 or the Asciidoc configuration files work.  Methods in a child class are added
-to the class or override an existing method of the same name.
+to the class or override an existing method of the same name.  You don't need 
+to change the original to configure it.
 
 As a concrete (but silly) example lets output 'bibliorefs not handled' when a
 _<biblioref>_ element is seen and lets override the existing _<link>_ element 
@@ -177,18 +185,35 @@ parameters. See below for standard parameters.
 <4> Call the convert routine passing the input file name, the output file 
 name and the name of your class.
 
+This configuration file overrides the standard Codiicsa processing of _<link>_ and
+adds processing for _<biblioref>_ which is not currently processed.
+
 The program is then used by:
 
 ----
 python my_file.py infilename outfilename
 ----
 
+Adding top level elements
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Codiicsa currently only supports the article top level element, but you 
+can add support for others.
+
+Classes defining top level elements must be derived from 
+codiicsa.docbook_common instead of codiicsa.docbook_article.
+
+The class must have a method for the new top level element eg _book_ and
+for any specific contained elements you want to process, eg _bookinfo_.
+
+You have to set the initial value for the section level counter so that
+the correct underlining is used for section titles (see __docbook_article.article()__ ).
+
 [[parameters]]
 Constructor Parameters
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The constructors of Codiicsa base classes codiicsa.docbook_article, 
-codiicsa.docbook_book (soon) and codiicsa.docbook_manpage (soon) have the 
+The constructors of Codiicsa base class codiicsa.docbook_common and docbook.article have the 
 following parameters.
 
 ----
